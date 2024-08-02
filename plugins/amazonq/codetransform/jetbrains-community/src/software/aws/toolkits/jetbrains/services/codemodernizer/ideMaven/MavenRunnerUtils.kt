@@ -31,7 +31,7 @@ fun runHilMavenCopyDependency(
     destinationDir: File,
     buildlogBuilder: StringBuilder,
     logger: Logger,
-    project: Project
+    project: Project,
 ): MavenCopyCommandsResult {
     val telemetry = CodeTransformTelemetryManager.getInstance(project)
     logger.info { "Executing IntelliJ bundled Maven" }
@@ -198,7 +198,7 @@ private fun runMavenClean(
     transformMavenRunner: TransformMavenRunner,
     logger: Logger,
     telemetry: CodeTransformTelemetryManager,
-    destinationDir: Path
+    destinationDir: Path,
 ): TransformRunnable {
     buildlogBuilder.appendLine("Command Run: IntelliJ IDEA bundled Maven clean")
     val cleanParams = MavenRunnerParameters(
@@ -233,7 +233,7 @@ private fun runMavenInstall(
     transformMavenRunner: TransformMavenRunner,
     logger: Logger,
     telemetry: CodeTransformTelemetryManager,
-    destinationDir: Path
+    destinationDir: Path,
 ): TransformRunnable {
     buildlogBuilder.appendLine("Command Run: IntelliJ IDEA bundled Maven install")
     val installParams = MavenRunnerParameters(
